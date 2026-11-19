@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Catches every other old Medium URL on blog.amierlorenz.com (GitHub Pages serves this for any missing path).
+     Medium post URLs end in the post's ID, so a path containing a known ID goes to that post's new home;
+     anything else goes to the blog. Without JS, the meta refresh sends everyone to the blog. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moved to amierlorenz.com/blog/</title>
+    <script>
+        // Medium post ID -> new URL. Add a line here for each post moved from Medium.
+        var MOVED = {
+            "9f0168686ede": "https://amierlorenz.com/blog/first-open-source-contribution/"
+        };
+        var target = "https://amierlorenz.com/blog/";
+        for (var id in MOVED) {
+            if (location.pathname.indexOf(id) !== -1) { target = MOVED[id]; break; }
+        }
+        location.replace(target);
+    </script>
+    <meta http-equiv="refresh" content="0; url=https://amierlorenz.com/blog/">
+    <link rel="canonical" href="https://amierlorenz.com/blog/">
+</head>
+<body>
+    <p>My blog has moved to <a href="https://amierlorenz.com/blog/">amierlorenz.com/blog</a>.</p>
+</body>
+</html>
